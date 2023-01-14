@@ -63,20 +63,20 @@ contract MyGov is ERC20{ // The governance token is named as "MyGov".
 //        return sonuc;
 //
 //    }
-    function getWeight(address member , uint projectid, uint period) public returns(uint){
+    function getWeight(address member , uint projectid, uint period) public view returns(uint){
         return individuals[member].delegatedVotes[projectid][period]+1;
     }
 //    function getPeriod(uint projectid) public returns(uint){
 //        return proposals[projectid].paymentPeriod;
 //    }
-    function getVoted(address member , uint projectid , uint period) public returns(bool){
+    function getVoted(address member , uint projectid , uint period) public view returns(bool){
         return individuals[member].isVoted[projectid][period];
     }
-    function getVoteCount(uint projectid) public returns(uint[] memory){
+    function getVoteCount(uint projectid) public view returns(uint[] memory){
         return proposals[projectid].voteCount;
     }
 //
-    function getReservedAmount() public returns(uint){
+    function getReservedAmount() public view returns(uint){
         return reservedAmount;
     }
 //
